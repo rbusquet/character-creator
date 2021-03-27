@@ -1,6 +1,13 @@
-import React from 'react';
+import type { ReactNode, ButtonHTMLAttributes } from "react";
 
-import styles from './ToggleButton.module.css';
+import styles from "./ToggleButton.module.css";
+
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  label: string;
+  color?: string;
+  children: ReactNode;
+  isSelected: boolean;
+}
 
 const ToggleButton = ({
   label,
@@ -8,7 +15,7 @@ const ToggleButton = ({
   children,
   isSelected,
   ...delegated
-}) => {
+}: Props) => {
   return (
     <button
       {...delegated}

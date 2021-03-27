@@ -1,6 +1,13 @@
-import React from 'react';
+import styles from "./Character.module.css";
 
-import styles from './Character.module.css';
+interface Props {
+  body: number;
+  head: number;
+  face: number;
+  accessory: number;
+  skinColor: string;
+  clothesColor: string;
+}
 
 function Character({
   body,
@@ -9,7 +16,7 @@ function Character({
   accessory,
   skinColor,
   clothesColor,
-}) {
+}: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -487,9 +494,7 @@ function Character({
           )}
         </g>
         <g>
-          {accessory === 0 && (
-            <>{/* The default option is "no accessory" */}</>
-          )}
+          {accessory === 0 && <>{/* The default option is "no accessory" */}</>}
           {accessory === 1 && (
             <path
               fill="#000"
